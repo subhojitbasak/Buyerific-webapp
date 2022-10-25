@@ -27,35 +27,23 @@ public class LeadController {
 	
 	@Autowired
 	private ContactService contactService;
-	
-//	// Default login page
-//	//localhost:8080/
-//	@RequestMapping("/login")
-//	public String loginPage() {
-//		return "login";
-//	}
-//	//upon submission of login form
 	//localhost:8080/login
 	@RequestMapping("/create_lead")
 	public String LeadPage() {
 		return "create_lead";
-		
 	}
-//	
+//	localhost:8080/listall
 	@RequestMapping("/listallLead")
 	public String listallPage(ModelMap model) {
 		List<Lead> leads = leadService.getAllLead();
 		model.addAttribute("leads", leads);
-//		System.out.println(leads.username);
 		return "listall";
 	}
 	
 	@RequestMapping("/save")
 	public String saveOneLead(@ModelAttribute("lead") Lead lead) {
-		
 		leadService.saveOneLead(lead);
 		return "create_lead";
-		
 	}
 	@RequestMapping("/findOneLead")
 	public String findOneLead(@RequestParam("id") long id, Model model) {
@@ -76,8 +64,5 @@ public class LeadController {
 		List<Contact> contact = contactService.getAllContact();
 		model.addAttribute("contact", contact);
 		return "list_contact";
-		
 	}
-	
-
 }
