@@ -8,7 +8,8 @@
 <body>
 <a href="listallLead">All Leads</a>
 
-<a href="create_lead">Create Lead</a>
+<a href="create_lead">Create Leads</a>
+
 
 <a href="logout">Logout</a>
 
